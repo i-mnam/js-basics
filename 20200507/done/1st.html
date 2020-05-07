@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>javascript1 - let, const, var, object</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    last loading.
+    <br/>
+    let 구문은 블록 유효 범위를 갖는 지역 변수를 선언하며, 선언과 동시에 임의의 값으로 초기화할 수도 있다.
+    <br/>
+    let은 변수가 선언된 블록, 구문 또는 표현식 내에서만 유효한 변수를 선언한다.
+    <br/>
+    이는 var 키워드가 블록 범위를 무시하고 전역 변수나 함수 지역 변수로 선언되는 것과 다른 점이다.
+    <script>
+      console.log("2");
+      // alert("script 선언한 순서대로");
+      const testNum = 123;
+      const testArr = ["m", true, testNum];
+      //console.log('testArr' + testArr);
+      // js array //
+      for(i=0; i<testArr.length; i++){
+        console.log('[' + i + ']' + testArr[i] + 'type:' + typeof(testArr[i]));
+      }
+
+      const namInfo = {
+        name:"Nam",
+        age:32,
+        gender:"Female",
+        favMovies:["Blindside", "Haul's moving home"],
+        favFood:[
+          {
+            name:"pizza",
+            fatty:true
+          },
+          {
+            name:"apple", fatty:false
+          }
+        ]
+      }
+
+      console.log(namInfo.gender);
+      console.log(namInfo);
+      console.log(namInfo.favFood[1].name);
+
+      console.log(console);
+      // built in function 내장함수
+      // console.log(), alert()
+      
+      // backtick : String 에서 사용권장함!!
+      function sayHello(name, age){
+        console.log(`Hello ${name}! you are ${age} years old.`);
+      }
+
+      sayHello('Nam', 32);
+      
+      /////////////////
+
+      // return VS void
+      function funcNoReturn(a1, a2) {
+        console.log(`a1:${a1} & a2:${a2}`);
+      }
+      function funcWithReturn(a1, a2) {
+        return `a1:${a1} & a2:${a2}`;
+      }
+      const noReturn = funcNoReturn(1, 2);
+      console.log(noReturn);
+      const withReturn = funcWithReturn(1, 2);
+      console.log(withReturn);
+
+      const calculator = {
+        plus: function(a, b){
+          return a + b;
+        },
+        minus: function(a, b){
+          return a - b;
+        },
+        multiple: function(a, b){
+          return a * b;
+        },
+        devide: function(a, b){
+          return a / b;
+        }
+      }
+      console.log(`1/2=${calculator.devide(1, 2)}`);
+      
+      console.log(console);
+      console.log(ducument);
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
