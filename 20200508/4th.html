@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>javascript4 - function_practice</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+    <style>
+        body {
+            background-color:  #ecf0f1;
+        }
+        h1 {
+            color: #34495e;
+            transition: color 0.5s ease-in-out;
+        }
+        .clicked {
+            color: #7f8c8d;
+        }
+
+        .btn {
+            cursor: pointer;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 id="title" class="btn">
+        js와 css 기능 분리해서 작동시키기
+    </h1>
+    <!-- <script src="script.js"></script> -->
+    <script>
+      const title = document.querySelector('#title');
+
+      const CLICKED_CLASS = "clicked";
+
+      function handleClick() {
+          /* 
+          // #1
+          const currentClass = title.className;
+          console.log("cur:" + currentClass + "//list:" + title.classList);
+          if(currentClass !== CLICKED_CLASS) {
+                //title.className = CLICKED_CLASS;
+                // 이전 클레스를 그저 날려버림 : not good //
+                title.classList.add(CLICKED_CLASS);
+
+          } else {
+                //title.className = "";
+                title.classList.remove(CLICKED_CLASS);
+          }
+          */
+
+          /* 
+          // #2
+          const hasClass = title.classList.contains(CLICKED_CLASS);
+
+          if(!hasClass) {
+              title.classList.add(CLICKED_CLASS);
+          } else {
+              title.classList.remove(CLICKED_CLASS);
+          }
+          */
+
+          title.classList.toggle(CLICKED_CLASS);
+      }
+
+      function init() {
+            title.addEventListener('click', handleClick);
+      }
+
+      init();
+    </script>
+    
+  </body>
+</html>
